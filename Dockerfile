@@ -12,13 +12,19 @@ COPY . .
 # Generate Prisma client
 RUN npx prisma generate
 
-# Build the application
+# Generate Nuxt types first (this fixes the tsconfig.app.json issue)
+RUN npx nuxt prepare
+
+# Build the application with strict type checking disabled for build
 RUN npm run build
 
 # Production stage
-FROM node:20
+FROM node:20-alpine
 
 WORKDIR /app
+
+# Install curl for healthcheck
+RUN apk add --no-cache curl
 
 # Copy package files
 COPY package*.json ./
@@ -46,7 +52,7 @@ EXPOSE 3000
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
-  CMD wget --no-verbose --tries=1 --spider http://localhost:3000/api/health || exit 1
+  CMD curl --fail http://localhost:3000/api/health || exit 1
 
 # Run migrations on startup, then start the application
-CMD ["sh", "-c", "./node_modules/.bin/prisma migrate deploy && node .output/server/index.mjs"]
+CMD ["sh", "-c", "npx prisma migrate deploy && node .output/server/index.mjs"]
