@@ -9,13 +9,13 @@ RUN npm ci
 # Copy source code
 COPY . .
 
+# Generate Nuxt types first (this creates .nuxt directory with tsconfig files)
+RUN npx nuxt prepare
+
 # Generate Prisma client
 RUN npx prisma generate
 
-# Generate Nuxt types first (this fixes the tsconfig.app.json issue)
-RUN npx nuxt prepare
-
-# Build the application with strict type checking disabled for build
+# Build the application
 RUN npm run build
 
 # Production stage
