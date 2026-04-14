@@ -9,10 +9,10 @@ RUN npm ci
 # Copy source code
 COPY . .
 
-# Generate Prisma client first
+# Generate Prisma client
 RUN npx prisma generate
 
-# Prepare Nuxt (generates .nuxt directory with TypeScript configs)
+# Create .nuxt directory and prepare TypeScript configs
 RUN npx nuxt prepare
 
 # Build the application
