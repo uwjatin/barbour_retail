@@ -518,7 +518,7 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted, nextTick } from 'vue';
-import { useVADStore, type Order, type OrderStatus, type OrderType, type PaymentMethod } from '@/stores/vadStore';
+import { useVADStore, type Order, type OrderStatus, type OrderType, type PaymentMethod, type PaymentStatus } from '@/stores/vadStore';
 
 const vadStore = useVADStore();
 
