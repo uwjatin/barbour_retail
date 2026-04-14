@@ -1,0 +1,294 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Category {
+  id          String    @id @default(cuid())
+  name        String
+  description String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  products    Product[]
+
+  @@map("categories")
+}
+
+model Customer {
+  id                 String         @id @default(cuid())
+  title              String?
+  firstName          String
+  lastName           String
+  email              String?        @unique
+  phone              String?        @unique
+  createdAt          DateTime       @default(now())
+  updatedAt          DateTime       @updatedAt
+  shippingStreet     String?
+  shippingPostalCode String?
+  shippingCity       String?
+  billingDifferent   Boolean        @default(false)
+  billingName        String?
+  billingCompany     String?
+  billingStreet      String?
+  billingPostalCode  String?
+  billingCity        String?
+  notifications      Notification[]
+  orders             Order[]
+  repairs            Repair[]
+
+  @@index([email])
+  @@index([phone])
+  @@map("customers")
+}
+
+model Product {
+  id             String             @id @default(cuid())
+  sku            String             @unique
+  name           String
+  description    String?
+  type           ProductType
+  categoryId     String?
+  basePrice      Decimal            @db.Decimal(10, 2)
+  active         Boolean            @default(true)
+  createdAt      DateTime           @default(now())
+  updatedAt      DateTime           @updatedAt
+  orderItems     OrderItem[]
+  variations     ProductVariation[]
+  category       Category?          @relation(fields: [categoryId], references: [id])
+  stockMovements StockMovement[]
+
+  @@index([sku])
+  @@index([type])
+  @@index([categoryId])
+  @@map("products")
+}
+
+model ProductVariation {
+  id        String   @id @default(cuid())
+  productId String
+  size      Size
+  color     Color
+  stock     Int      @default(0)
+  price     Decimal  @db.Decimal(10, 2)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@unique([productId, size, color])
+  @@index([productId])
+  @@index([size])
+  @@index([color])
+  @@map("product_variations")
+}
+
+model Order {
+  id                   String         @id @default(cuid())
+  orderNumber          String         @unique
+  type                 OrderType
+  status               OrderStatus    @default(pending)
+  paymentStatus        PaymentStatus  @default(pending)
+  paymentMethod        PaymentMethod?
+  clientId             String
+  clientName           String
+  clientTitle          String?
+  clientFirstName      String?
+  clientLastName       String?
+  clientPhone          String?
+  clientEmail          String?
+  shippingStreet       String?
+  shippingPostalCode   String?
+  shippingCity         String?
+  billingDifferent     Boolean        @default(false)
+  billingName          String?
+  billingCompany       String?
+  billingStreet        String?
+  billingPostalCode    String?
+  billingCity          String?
+  notes                String?
+  totalAmount          Decimal        @db.Decimal(10, 2)
+  createdAt            DateTime       @default(now())
+  updatedAt            DateTime       @updatedAt
+  lastNotificationSent DateTime?
+  notifications        Notification[]
+  items                OrderItem[]
+  customer             Customer       @relation(fields: [clientId], references: [id])
+
+  @@index([orderNumber])
+  @@index([type])
+  @@index([status])
+  @@index([paymentStatus])
+  @@index([clientId])
+  @@index([createdAt])
+  @@map("orders")
+}
+
+model OrderItem {
+  id          String   @id @default(cuid())
+  orderId     String
+  productId   String?
+  productName String
+  sku         String?
+  size        Size
+  color       Color
+  quantity    Int
+  unitPrice   Decimal  @db.Decimal(10, 2)
+  total       Decimal  @db.Decimal(10, 2)
+  createdAt   DateTime @default(now())
+  order       Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  product     Product? @relation(fields: [productId], references: [id])
+
+  @@index([orderId])
+  @@index([productId])
+  @@map("order_items")
+}
+
+model Repair {
+  id            String         @id @default(cuid())
+  repairNumber  String         @unique
+  clientId      String
+  clientName    String
+  clientPhone   String?
+  clientEmail   String?
+  description   String
+  status        RepairStatus   @default(devis_envoye)
+  amount        Decimal?       @db.Decimal(10, 2)
+  estimatedDays Int?
+  isPaid        Boolean        @default(false)
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  notifications Notification[]
+  customer      Customer       @relation(fields: [clientId], references: [id])
+
+  @@index([repairNumber])
+  @@index([status])
+  @@index([clientId])
+  @@index([createdAt])
+  @@map("repairs")
+}
+
+model StockMovement {
+  id            String   @id @default(cuid())
+  productId     String
+  variationId   String?
+  type          String
+  quantity      Int
+  unitPrice     Decimal  @db.Decimal(10, 2)
+  totalValue    Decimal  @db.Decimal(10, 2)
+  size          Size
+  color         Color
+  referenceId   String?
+  referenceType String?
+  notes         String?
+  createdAt     DateTime @default(now())
+  product       Product  @relation(fields: [productId], references: [id])
+
+  @@index([productId])
+  @@index([type])
+  @@index([createdAt])
+  @@index([referenceId, referenceType])
+  @@map("stock_movements")
+}
+
+model Notification {
+  id         String             @id @default(cuid())
+  type       NotificationType
+  status     NotificationStatus @default(PENDING)
+  recipient  String
+  subject    String?
+  content    String
+  orderId    String?
+  repairId   String?
+  reference  String?
+  sentAt     DateTime?
+  error      String?
+  createdAt  DateTime           @default(now())
+  updatedAt  DateTime           @updatedAt
+  customerId String?
+  Customer   Customer?          @relation(fields: [customerId], references: [id])
+  order      Order?             @relation(fields: [orderId], references: [id])
+  repair     Repair?            @relation(fields: [repairId], references: [id])
+
+  @@index([status])
+  @@index([type])
+  @@index([orderId])
+  @@index([repairId])
+  @@index([createdAt])
+  @@map("notifications")
+}
+
+enum OrderType {
+  ecommerce
+  phone
+}
+
+enum OrderStatus {
+  pending
+  processing
+  shipped
+  cancelled
+}
+
+enum PaymentStatus {
+  pending
+  paid
+  failed
+  refunded
+}
+
+enum PaymentMethod {
+  card
+  cash
+  bank_transfer
+  pending_link
+}
+
+enum ProductType {
+  homme
+  femme
+  accessoires
+}
+
+enum Size {
+  XXS
+  XS
+  S
+  M
+  L
+  XL
+  XXL
+  XXXL
+}
+
+enum Color {
+  Black
+  Navy
+  Olive
+  Sage
+  Camel
+  Marron
+  Beige
+  Tartan
+}
+
+enum RepairStatus {
+  devis_envoye
+  en_cours
+  pret_a_retirer
+  termine
+}
+
+enum NotificationType {
+  SMS
+  EMAIL
+}
+
+enum NotificationStatus {
+  PENDING
+  SENT
+  FAILED
+  CANCELLED
+}

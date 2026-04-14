@@ -1,0 +1,55 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - navigation [ref=e4]:
+      - generic [ref=e5]:
+        - link "Barbour by Jockey Club" [ref=e6] [cursor=pointer]:
+          - /url: /pos
+          - img "Barbour by Jockey Club" [ref=e7]
+        - generic [ref=e8]:
+          - link "💳 Caisse" [ref=e9] [cursor=pointer]:
+            - /url: /pos
+          - link "🔧 Atelier" [ref=e10] [cursor=pointer]:
+            - /url: /atelier
+          - link "🛒 VAD" [ref=e11] [cursor=pointer]:
+            - /url: /vad
+          - button "🔒 Dashboard" [ref=e12]:
+            - generic [ref=e13]: 🔒
+            - text: Dashboard
+          - link "3" [ref=e14] [cursor=pointer]:
+            - /url: /notifications
+            - img [ref=e15]
+            - generic [ref=e17]: "3"
+    - generic [ref=e110]:
+      - banner [ref=e111]:
+        - heading "💳 Caisse" [level=1] [ref=e112]
+      - textbox "Recherche produit ou scan code-barre" [ref=e115]:
+        - /placeholder: 🔍 Recherche produit ou scan code-barre...
+      - generic [ref=e116]:
+        - heading "📦 Panier (1 articles)" [level=2] [ref=e156]
+        - list [ref=e120]:
+          - listitem [ref=e121]:
+            - generic [ref=e122]:
+              - generic [ref=e123]: Sac Messenger Toile Vert
+              - generic [ref=e124]: SAC-002
+            - generic [ref=e125]:
+              - button "Diminuer la quantité" [ref=e126]: −
+              - generic [ref=e127]: "1"
+              - button "Augmenter la quantité" [ref=e128]: +
+            - generic [ref=e129]:
+              - generic [ref=e130]: 79.00 €
+              - button "Supprimer l'article" [ref=e131]: 🗑️
+        - generic [ref=e133]: "TOTAL : 79.00 €"
+      - contentinfo [ref=e134]:
+        - button "Vider le panier" [ref=e135]: 🗑️ Vider
+        - button "Payer par carte bancaire" [ref=e136]: 💳 CB (F3)
+        - button "Payer en espèces" [ref=e137]: 💵 ESPÈCES (F4)
+  - generic:
+    - img
+  - generic [ref=e38]:
+    - button "Toggle Nuxt DevTools" [ref=e39] [cursor=pointer]:
+      - img [ref=e40]
+    - generic "Page load time" [ref=e43]:
+      - generic [ref=e44]: "14"
+      - generic [ref=e45]: ms
+    - button "Toggle Component Inspector" [ref=e47] [cursor=pointer]:
+      - img [ref=e48]

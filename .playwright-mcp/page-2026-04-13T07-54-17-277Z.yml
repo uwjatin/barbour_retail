@@ -1,0 +1,86 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e5]:
+      - link "Barbour by Jockey Club" [ref=e6] [cursor=pointer]:
+        - /url: /pos
+        - img "Barbour by Jockey Club" [ref=e7]
+      - generic [ref=e8]:
+        - link "💳 Caisse" [ref=e9] [cursor=pointer]:
+          - /url: /pos
+        - link "🔧 Atelier" [ref=e10] [cursor=pointer]:
+          - /url: /atelier
+        - link "🛒 VAD" [ref=e11] [cursor=pointer]:
+          - /url: /vad
+        - button "🔒 Dashboard" [ref=e12]:
+          - generic [ref=e13]: 🔒
+          - text: Dashboard
+        - link "3" [ref=e14] [cursor=pointer]:
+          - /url: /notifications
+          - img [ref=e15]
+          - generic [ref=e17]: "3"
+  - generic [ref=e19]:
+    - banner [ref=e20]:
+      - heading "📦 Stocks" [level=1] [ref=e21]
+      - generic [ref=e22]:
+        - generic [ref=e23]: "Boutique:"
+        - combobox [ref=e24]:
+          - option "Toutes" [selected]
+          - option "Saint-Germain"
+          - option "Malesherbes"
+          - option "Atelier Saint-Germain"
+    - generic [ref=e26]:
+      - generic [ref=e27]:
+        - textbox "🔍 Rechercher un produit..." [ref=e28]
+        - generic [ref=e29]: 🔍
+      - generic [ref=e30]:
+        - generic [ref=e31]:
+          - generic [ref=e32]: "Type:"
+          - combobox [ref=e33]:
+            - option "Tout" [selected]
+            - option "Homme"
+            - option "Femme"
+            - option "Accessoires"
+        - generic [ref=e34]:
+          - generic [ref=e35]: "Taille:"
+          - combobox [ref=e36]:
+            - option "Tout" [selected]
+            - option "XXS"
+            - option "XS"
+            - option "S"
+            - option "M"
+            - option "L"
+            - option "XL"
+            - option "XXL"
+            - option "XXXL"
+        - generic [ref=e37]:
+          - generic [ref=e38]: "Couleur:"
+          - combobox [ref=e39]:
+            - option "Tout" [selected]
+            - option "Black"
+            - option "Navy"
+            - option "Olive"
+            - option "Sage"
+            - option "Camel"
+            - option "Marron"
+            - option "Beige"
+            - option "Tartan"
+    - generic [ref=e41]:
+      - table [ref=e42]:
+        - rowgroup [ref=e43]:
+          - row "Produit XXS XS S M L XL XXL XXXL Total Détail" [ref=e44]:
+            - columnheader "Produit" [ref=e45]
+            - columnheader "XXS" [ref=e46]
+            - columnheader "XS" [ref=e47]
+            - columnheader "S" [ref=e48]
+            - columnheader "M" [ref=e49]
+            - columnheader "L" [ref=e50]
+            - columnheader "XL" [ref=e51]
+            - columnheader "XXL" [ref=e52]
+            - columnheader "XXXL" [ref=e53]
+            - columnheader "Total" [ref=e54]
+            - columnheader "Détail" [ref=e55]
+        - rowgroup
+      - generic [ref=e56]:
+        - generic [ref=e57]: 📦
+        - generic [ref=e58]: Aucun produit trouvé
+        - generic [ref=e59]: Essayez de modifier vos filtres

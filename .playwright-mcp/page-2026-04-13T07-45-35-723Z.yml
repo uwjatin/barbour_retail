@@ -1,0 +1,67 @@
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - navigation [ref=e4]:
+      - generic [ref=e5]:
+        - link "Barbour by Jockey Club" [ref=e6] [cursor=pointer]:
+          - /url: /pos
+          - img "Barbour by Jockey Club" [ref=e7]
+        - generic [ref=e8]:
+          - link "💳 Caisse" [ref=e9] [cursor=pointer]:
+            - /url: /pos
+          - link "🔧 Atelier" [ref=e10] [cursor=pointer]:
+            - /url: /atelier
+          - link "🛒 VAD" [ref=e11] [cursor=pointer]:
+            - /url: /vad
+          - button "🔒 Dashboard" [ref=e12]:
+            - generic [ref=e13]: 🔒
+            - text: Dashboard
+          - link "3" [ref=e14] [cursor=pointer]:
+            - /url: /notifications
+            - img [ref=e15]
+            - generic [ref=e17]: "3"
+    - generic [ref=e19]:
+      - banner [ref=e20]:
+        - heading "💳 Caisse" [level=1] [ref=e21]
+      - generic [ref=e23]:
+        - textbox "Recherche produit ou scan code-barre" [active] [ref=e24]:
+          - /placeholder: 🔍 Recherche produit ou scan code-barre...
+        - list [ref=e82]:
+          - listitem [ref=e83] [cursor=pointer]:
+            - generic [ref=e84]:
+              - generic [ref=e85]: Sac Messenger Toile Vert
+              - generic [ref=e86]: SAC-002
+            - generic [ref=e87]: 79.00 €
+          - listitem [ref=e88] [cursor=pointer]:
+            - generic [ref=e89]:
+              - generic [ref=e90]: Sac Weekend Cuir Marron
+              - generic [ref=e91]: SAC-001
+            - generic [ref=e92]: 189.00 €
+      - generic [ref=e25]:
+        - heading "📦 Panier (1 articles)" [level=2] [ref=e93]
+        - list [ref=e94]:
+          - listitem [ref=e95]:
+            - generic [ref=e96]:
+              - generic [ref=e97]: Sac Messenger Toile Vert
+              - generic [ref=e98]: SAC-002
+            - generic [ref=e99]:
+              - button "Diminuer la quantité" [ref=e100]: −
+              - generic [ref=e101]: "1"
+              - button "Augmenter la quantité" [ref=e102]: +
+            - generic [ref=e103]:
+              - generic [ref=e104]: 79.00 €
+              - button "Supprimer l'article" [ref=e105]: 🗑️
+        - generic [ref=e33]: "TOTAL : 79.00 €"
+      - contentinfo [ref=e34]:
+        - button "Vider le panier" [ref=e35]: 🗑️ Vider
+        - button "Payer par carte bancaire" [ref=e36]: 💳 CB (F3)
+        - button "Payer en espèces" [ref=e37]: 💵 ESPÈCES (F4)
+  - generic:
+    - img
+  - generic [ref=e38]:
+    - button "Toggle Nuxt DevTools" [ref=e39] [cursor=pointer]:
+      - img [ref=e40]
+    - generic "Page load time" [ref=e43]:
+      - generic [ref=e44]: "14"
+      - generic [ref=e45]: ms
+    - button "Toggle Component Inspector" [ref=e47] [cursor=pointer]:
+      - img [ref=e48]

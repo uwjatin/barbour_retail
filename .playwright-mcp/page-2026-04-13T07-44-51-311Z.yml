@@ -1,0 +1,46 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - navigation [ref=e4]:
+      - generic [ref=e5]:
+        - link "Barbour by Jockey Club" [ref=e6] [cursor=pointer]:
+          - /url: /pos
+          - img "Barbour by Jockey Club" [ref=e7]
+        - generic [ref=e8]:
+          - link "💳 Caisse" [ref=e9] [cursor=pointer]:
+            - /url: /pos
+          - link "🔧 Atelier" [ref=e10] [cursor=pointer]:
+            - /url: /atelier
+          - link "🛒 VAD" [ref=e11] [cursor=pointer]:
+            - /url: /vad
+          - button "🔒 Dashboard" [ref=e12]:
+            - generic [ref=e13]: 🔒
+            - text: Dashboard
+          - link "3" [ref=e14] [cursor=pointer]:
+            - /url: /notifications
+            - img [ref=e15]
+            - generic [ref=e17]: "3"
+    - generic [ref=e19]:
+      - banner [ref=e20]:
+        - heading "💳 Caisse" [level=1] [ref=e21]
+      - textbox "Recherche produit ou scan code-barre" [ref=e24]:
+        - /placeholder: 🔍 Recherche produit ou scan code-barre...
+      - generic [ref=e25]:
+        - heading "📦 Panier (0 articles)" [level=2] [ref=e27]
+        - generic [ref=e29]:
+          - paragraph [ref=e30]: 🛒 Le panier est vide
+          - paragraph [ref=e31]: Scannez un produit ou utilisez la recherche
+        - generic [ref=e33]: "TOTAL : 0.00 €"
+      - contentinfo [ref=e34]:
+        - button "Vider le panier" [ref=e35]: 🗑️ Vider
+        - button "Payer par carte bancaire" [ref=e36]: 💳 CB (F3)
+        - button "Payer en espèces" [ref=e37]: 💵 ESPÈCES (F4)
+  - generic:
+    - img
+  - generic [ref=e38]:
+    - button "Toggle Nuxt DevTools" [ref=e39] [cursor=pointer]:
+      - img [ref=e40]
+    - generic "Page load time" [ref=e43]:
+      - generic [ref=e44]: "14"
+      - generic [ref=e45]: ms
+    - button "Toggle Component Inspector" [ref=e47] [cursor=pointer]:
+      - img [ref=e48]

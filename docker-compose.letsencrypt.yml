@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  nginx-proxy:
+    image: jwilder/nginx-proxy:latest
+    container_name: nginx-proxy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /opt/barbour/certs:/etc/nginx/certs:ro
+    restart: unless-stopped
+    networks:
+      - web
+
+  letsencrypt-companion:
+    image: jrcs/letsencrypt-nginx-proxy-companion:latest
+    container_name: letsencrypt-companion
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /opt/barbour/certs:/etc/nginx/certs:ro
+    environment:
+      - NGINX_CONTAINER_NAME=nginx-proxy
+    restart: unless-stopped
+    networks:
+      - web
+
+networks:
+  web:
+    driver: bridge
+
+volumes:
+  certs:

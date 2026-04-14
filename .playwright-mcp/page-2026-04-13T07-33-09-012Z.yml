@@ -1,0 +1,109 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - navigation [ref=e4]:
+      - generic [ref=e5]:
+        - link "Barbour by Jockey Club" [ref=e6] [cursor=pointer]:
+          - /url: /pos
+          - img "Barbour by Jockey Club" [ref=e7]
+        - generic [ref=e8]:
+          - link "💳 Caisse" [ref=e9] [cursor=pointer]:
+            - /url: /pos
+          - link "🔧 Atelier" [ref=e10] [cursor=pointer]:
+            - /url: /atelier
+          - link "🛒 VAD" [ref=e11] [cursor=pointer]:
+            - /url: /vad
+          - button "🔒 Dashboard" [ref=e12]:
+            - generic [ref=e13]: 🔒
+            - text: Dashboard
+          - link "3" [ref=e14] [cursor=pointer]:
+            - /url: /notifications
+            - img [ref=e15]
+            - generic [ref=e17]: "3"
+    - generic [ref=e19]:
+      - banner [ref=e20]:
+        - heading "📊 Dashboard" [level=1] [ref=e21]
+      - generic [ref=e22]:
+        - generic [ref=e23]:
+          - heading "💰 CA Semaine" [level=3] [ref=e24]
+          - generic [ref=e25]:
+            - generic [ref=e26]:
+              - generic [ref=e27]: Boutique
+              - generic [ref=e28]: 8 450€ +12%
+            - generic [ref=e29]:
+              - generic [ref=e30]: Web
+              - generic [ref=e31]: 1 890€ -5%
+            - generic [ref=e32]:
+              - generic [ref=e33]: Atelier
+              - generic [ref=e34]: 3 200€ +18%
+            - generic [ref=e35]:
+              - generic [ref=e36]: TOTAL
+              - generic [ref=e37]: 13 540€ +9%
+        - generic [ref=e38]:
+          - heading "📦 Stocks Critiques" [level=3] [ref=e39]
+          - generic [ref=e40]:
+            - generic [ref=e41]:
+              - generic [ref=e42]:
+                - generic [ref=e43]: Veste Noir M
+                - generic [ref=e44]: "2 restants (seuil: 5)"
+              - button "Commander" [ref=e45]
+            - generic [ref=e46]:
+              - generic [ref=e47]:
+                - generic [ref=e48]: Doublure Beige L
+                - generic [ref=e49]: "1 restant (seuil: 3)"
+              - button "Commander" [ref=e50]
+          - link "Consulter les stocks" [ref=e51] [cursor=pointer]:
+            - /url: /stocks
+        - generic [ref=e52]:
+          - heading "🔧 Atelier" [level=3] [ref=e53]
+          - generic [ref=e54]:
+            - generic [ref=e55]:
+              - generic [ref=e56]: Devis en attente
+              - generic [ref=e57]: "7"
+            - generic [ref=e58]:
+              - generic [ref=e59]: En cours
+              - generic [ref=e60]: "18"
+            - generic [ref=e61]:
+              - generic [ref=e62]: Prêts à retirer
+              - generic [ref=e63]: "4"
+          - link "Voir tous les dossiers" [ref=e64] [cursor=pointer]:
+            - /url: /atelier
+        - generic [ref=e65]:
+          - heading "📈 Top Ventes (7j)" [level=3] [ref=e66]
+          - generic [ref=e67]:
+            - generic [ref=e68]:
+              - generic [ref=e69]:
+                - generic [ref=e70]: "1"
+                - generic [ref=e71]: Veste Imperméable Noir
+              - generic [ref=e72]: 23 ventes
+            - generic [ref=e73]:
+              - generic [ref=e74]:
+                - generic [ref=e75]: "2"
+                - generic [ref=e76]: Pantalon Technique Gris
+              - generic [ref=e77]: 18 ventes
+            - generic [ref=e78]:
+              - generic [ref=e79]:
+                - generic [ref=e80]: "3"
+                - generic [ref=e81]: Doublure Amovible Beige
+              - generic [ref=e82]: 12 ventes
+          - link "Consulter les ventes" [ref=e83] [cursor=pointer]:
+            - /url: /sales
+        - generic [ref=e84]:
+          - heading "⚙️ Suggestions Réassort" [level=3] [ref=e85]
+          - generic [ref=e86]:
+            - generic [ref=e87]:
+              - generic [ref=e88]: 🌧️
+              - generic [ref=e89]:
+                - generic [ref=e90]: Pluie prévue 10-15 février
+                - generic [ref=e91]: "Prévision : 45mm sur 5 jours"
+            - generic [ref=e92]: → Commander +15 unités Veste Imperméable (focus M/L)
+            - button "📋 Créer commande fournisseur" [ref=e93]
+  - generic:
+    - img
+  - generic [ref=e94]:
+    - button "Toggle Nuxt DevTools" [ref=e95] [cursor=pointer]:
+      - img [ref=e96]
+    - generic "Page load time" [ref=e99]:
+      - generic [ref=e100]: "13"
+      - generic [ref=e101]: ms
+    - button "Toggle Component Inspector" [ref=e103] [cursor=pointer]:
+      - img [ref=e104]

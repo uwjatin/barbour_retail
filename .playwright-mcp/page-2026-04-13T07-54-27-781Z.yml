@@ -1,0 +1,75 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - navigation [ref=e4]:
+      - generic [ref=e5]:
+        - link "Barbour by Jockey Club" [ref=e6] [cursor=pointer]:
+          - /url: /pos
+          - img "Barbour by Jockey Club" [ref=e7]
+        - generic [ref=e8]:
+          - link "💳 Caisse" [ref=e9] [cursor=pointer]:
+            - /url: /pos
+          - link "🔧 Atelier" [ref=e10] [cursor=pointer]:
+            - /url: /atelier
+          - link "🛒 VAD" [ref=e11] [cursor=pointer]:
+            - /url: /vad
+          - button "🔒 Dashboard" [ref=e12]:
+            - generic [ref=e13]: 🔒
+            - text: Dashboard
+          - link "3" [ref=e14] [cursor=pointer]:
+            - /url: /notifications
+            - img [ref=e15]
+            - generic [ref=e17]: "3"
+    - generic [ref=e19]:
+      - banner [ref=e20]:
+        - heading "Notifications Notifications" [level=1] [ref=e21]:
+          - img "Notifications" [ref=e22]: 🔔
+          - text: Notifications
+      - generic [ref=e23]:
+        - 'region "En attente de validation {{ pendingCount }} notifications en attente" [ref=e24]':
+          - 'heading "En attente de validation {{ pendingCount }} notifications en attente" [level=2] [ref=e25]':
+            - img [ref=e26]: ⏳
+            - text: En attente de validation
+            - 'generic "{{ pendingCount }} notifications en attente" [ref=e27]': "2"
+          - list "Notifications en attente" [ref=e28]:
+            - listitem [ref=e29]:
+              - generic [ref=e30]:
+                - generic [ref=e31]:
+                  - generic [ref=e32]: SMS
+                  - generic [ref=e33]: marie.martin@example.com
+                - 'generic "Type: SMS" [ref=e34]': SMS
+              - generic [ref=e35]: "\"Votre commande ORD-1776065375456 est en cours de traitement\""
+              - generic [ref=e36]:
+                - button "Valider et envoyer la notification à marie.martin@example.com" [ref=e37]:
+                  - generic [ref=e38]: ✓
+                  - text: Valider & Envoyer
+                - button "Annuler la notification à marie.martin@example.com" [ref=e39]: ✕ Annuler
+            - listitem [ref=e40]:
+              - generic [ref=e41]:
+                - generic [ref=e42]:
+                  - generic [ref=e43]: SMS
+                  - generic [ref=e44]: admin
+                - 'generic "Type: SMS" [ref=e45]': SMS
+              - generic [ref=e46]: "\"Test notification\""
+              - generic [ref=e47]:
+                - button "Valider et envoyer la notification à admin" [ref=e48]:
+                  - generic [ref=e49]: ✓
+                  - text: Valider & Envoyer
+                - button "Annuler la notification à admin" [ref=e50]: ✕ Annuler
+        - region "Historique (24h)" [ref=e51]:
+          - heading "Historique (24h)" [level=2] [ref=e52]:
+            - img [ref=e53]: 📜
+            - text: Historique (24h)
+          - list "Historique des notifications" [ref=e54]:
+            - generic [ref=e55]:
+              - generic [ref=e56]: 📭
+              - text: Aucune notification dans l'historique
+  - generic:
+    - img
+  - generic [ref=e57]:
+    - button "Toggle Nuxt DevTools" [ref=e58] [cursor=pointer]:
+      - img [ref=e59]
+    - generic "Page load time" [ref=e62]:
+      - generic [ref=e63]: "12"
+      - generic [ref=e64]: ms
+    - button "Toggle Component Inspector" [ref=e66] [cursor=pointer]:
+      - img [ref=e67]

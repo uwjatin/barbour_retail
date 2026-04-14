@@ -1,0 +1,91 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - navigation [ref=e4]:
+      - generic [ref=e5]:
+        - link "Barbour by Jockey Club" [ref=e6] [cursor=pointer]:
+          - /url: /pos
+          - img "Barbour by Jockey Club" [ref=e7]
+        - generic [ref=e8]:
+          - link "💳 Caisse" [ref=e9] [cursor=pointer]:
+            - /url: /pos
+          - link "🔧 Atelier" [ref=e10] [cursor=pointer]:
+            - /url: /atelier
+          - link "🛒 VAD" [ref=e11] [cursor=pointer]:
+            - /url: /vad
+          - button "🔒 Dashboard" [ref=e12]:
+            - generic [ref=e13]: 🔒
+            - text: Dashboard
+          - link "3" [ref=e14] [cursor=pointer]:
+            - /url: /notifications
+            - img [ref=e15]
+            - generic [ref=e17]: "3"
+    - generic [ref=e19]:
+      - banner [ref=e20]:
+        - heading "🔧 Atelier" [level=1] [ref=e21]
+      - generic [ref=e22]:
+        - generic [ref=e23]:
+          - generic [ref=e24]:
+            - generic [ref=e25]: 📋
+            - heading "Nouveau Dossier" [level=3] [ref=e26]
+          - button "+ Créer une réparation" [ref=e27]
+        - generic [ref=e28]:
+          - generic [ref=e29]:
+            - generic [ref=e30]: ⏳
+            - heading "En Cours" [level=3] [ref=e31]
+          - generic [ref=e32]: "1"
+          - paragraph [ref=e33]: réparations en cours
+        - generic [ref=e34]:
+          - generic [ref=e35]:
+            - generic [ref=e36]: ✅
+            - heading "Prêts à Retirer" [level=3] [ref=e37]
+          - generic [ref=e38]: "0"
+          - paragraph [ref=e39]: en attente de retrait
+      - generic [ref=e40]:
+        - generic [ref=e41]:
+          - generic [ref=e42]:
+            - heading "📋 Liste des Dossiers" [level=2] [ref=e43]
+            - generic [ref=e44]: 1 dossier(s)
+          - generic [ref=e45]:
+            - generic [ref=e46]:
+              - textbox "🔍 Rechercher un client..." [ref=e47]
+              - generic [ref=e48]: 🔍
+            - generic [ref=e49]:
+              - button "Tous" [ref=e50]
+              - button "Devis" [ref=e51]
+              - button "En cours" [ref=e52]
+              - button "Prêt" [ref=e53]
+              - button "Terminé" [ref=e54]
+            - generic [ref=e55]:
+              - generic [ref=e56]: Du
+              - textbox [ref=e58] [cursor=pointer]
+              - generic [ref=e59]: au
+              - textbox [ref=e61] [cursor=pointer]: 2026-04-13
+        - list [ref=e62]:
+          - generic [ref=e64] [cursor=pointer]:
+            - generic [ref=e65]:
+              - generic [ref=e66]:
+                - generic [ref=e67]: cmnwvgvp5000dqddk7bpthxbt
+                - generic [ref=e68]: En cours
+              - generic [ref=e69]: Marie MARTIN
+              - generic [ref=e70]: Reparation imperdable, zipper replacement
+              - generic [ref=e71]: 49.99€ • 7 jours
+            - generic [ref=e72]:
+              - combobox [ref=e73]:
+                - option "Devis envoyé"
+                - option "En cours" [selected]
+                - option "Prêt à retirer"
+                - option "Terminé"
+              - generic [ref=e74]:
+                - button "📱" [ref=e75]
+                - button "✉️" [ref=e76]
+              - button "✏️" [ref=e77]
+  - generic:
+    - img
+  - generic [ref=e78]:
+    - button "Toggle Nuxt DevTools" [ref=e79] [cursor=pointer]:
+      - img [ref=e80]
+    - generic "Page load time" [ref=e83]:
+      - generic [ref=e84]: "24"
+      - generic [ref=e85]: ms
+    - button "Toggle Component Inspector" [ref=e87] [cursor=pointer]:
+      - img [ref=e88]
